@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Video Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding-bottom: 80px; /* Add padding at bottom */
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #ff4b1f, #1fddff);
+      color: white;
+      padding: 20px;
+      margin: 0 auto 40px;
+      font-size: 2.8rem;
+      text-align: center;
+      width: fit-content;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    footer {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #434343, #000000);
+      color: white;
+      padding: 30px;
+      margin-top: 40px; /* Reduce top margin since we added padding */
+      text-align: center;
+      border-radius: 20px 20px 0 0;
+    }
+    .youtube-link {
+      display: inline-block;
+      background: #ff0000;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+    }
+    .youtube-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(255, 0, 0, 0.4);
+    }
+    .video-gallery {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping of video containers */
+      justify-content: center; /* Center video containers */
+      gap: 30px; /* Space between video containers */
+      margin: 0 auto 100px; /* Increase space below video gallery */
+      width: 100%;
+      max-width: 1200px; /* Limit max width of gallery */
+    }
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      max-width: 400px; /* Limit max width of video container */
+      width: 100%; /* Make it responsive */
+      align-items: center;
+    }
+    .video-container:hover, .video-container:active {
+      transform: scale(1.02) translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    video {
+      width: 100%;
+      border: none;
+      background: #000;
+      height: auto;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    video:active {
+      transform: scale(0.98);
+    }
+    .description {
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    .caption {
+      font-size: 1rem;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: #444;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('video');
+      
+      videos.forEach(video => {
+        // Mobile touch feedback
+        video.addEventListener('touchstart', function() {
+          this.style.transform = 'scale(0.98)';
+        });
+        
+        video.addEventListener('touchend', function() {
+          this.style.transform = 'scale(1)';
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>My Canva Works</h1>
+
+  <div class="video-gallery">
+    <div class="video-container">
+      <video controls>
+        <source src="Add a heading.mp4" type="video/mp4" />
+      </video>
+      <div class="description">
+        <div class="caption">Crafted With Cola & Creativity - Pepsi</div>
+        <p>This video showcases the creative process behind the Pepsi campaign, highlighting the innovative ideas and teamwork involved.</p>
+      </div>
+    </div>
+   
+    <!-- Add more videos like this in future -->
+    <!--
+    <div class="video-container">
+      <video controls>
+        <source src="another-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="description">
+        <div class="caption">Video 2: Another Title</div>
+        <p>Description for the second video goes here.</p>
+      </div>
+    </div>
+    -->
+  </div>
+
+  <footer>
+    <h3>About Me</h3>
+    <p>R. MOHAMMED DASTAGIR</p>
+    <a href="https://www.youtube.com/@ThakKali-uu" target="_blank" class="youtube-link">
+      <i class="fab fa-youtube"></i> My Youtube channel 
+      <br>ThakKali Presents
+    </a>
+  </footer>
+</body>
+</html>
